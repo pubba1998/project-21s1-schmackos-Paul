@@ -1,11 +1,5 @@
-<!doctype html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ Title }}</title>
-  <script>
-  let latitude = "-45.878761";
-    let longitude = "170.502792";
+let latitude = "-45.878761";
+let longitude = "170.502792";
     
     let url = "https://api.niwa.co.nz/tides/data?lat="+latitude+"&long="+longitude;
     fetch(url, {
@@ -32,24 +26,3 @@
         article.appendChild(tideEntery);
       }
     }
-  </script>
-  <style>
-  body {
-    background-color:sandybrown;
-  }
-
-  #myHeader {
-    text-align: center;
-  }
-
-  #tide {
-    text-align: center;
-    font-weight: bold;
-    line-height: 200%;
-  }
-  </style>
-</head>
-
-<body>
-    <article id = "tide"></article>
-</body>

@@ -1,0 +1,13 @@
+body {
+    background-color:sandybrown;
+  }
+
+  #myHeader {
+    text-align: center;
+  }
+
+  #tide {
+    text-align: center;
+    font-weight: bold;
+    line-height: 200%;
+  }
