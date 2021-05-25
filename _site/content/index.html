@@ -4,55 +4,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buddy&#39;s Beach</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <script src="scripts.js"></script>
+    <title>pleasegod</title>
   </head>
   <body>
-    <h1>Buddy's Beach</h1>
-<script>
+    <h1>pleasegod</h1>
 
-let latitude = "-45.878761";
-    let longitude = "170.502792";
-    
-    let url = "https://api.niwa.co.nz/tides/data?lat="+latitude+"&long="+longitude;
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "x-apikey": "mRg3UUIvxzuyZ0ESRPttGgs5FKSyXIph"
-      }
-    })
-    .then(response => { return response.json() })
-    .then(data => {
-        console.log(data);
-        processTideData(data);
-    })
-
-    function processTideData(data){
-      const article = document.querySelector('article');
-      const tideValues = (data.values);
-      console.log(data.values)
-    
-      for (let i = 0; i < tideValues.length; i++){
-        const tideEntery = document.createElement('p');
-        tideEntery.textContent = ((tideValues[i].time) + " | " + (tideValues[i].value));
-        console.log(tideEntery);
-        article.appendChild(tideEntery);
-      }
-    }
-</script>
-<style>
-      body {
-        background-color:sandybrown;
-      }
-
-      #myHeader {
-        text-align: center;
-      }
-
-      #tide {
-        text-align: center;
-        font-weight: bold;
-        line-height: 200%;
-      }
-    </style>
   </body>
 </html>
