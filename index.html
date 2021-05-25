@@ -4,10 +4,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <title>Buddy's Beach</title>
   </head>
   <body>
-    <h1 id = "myHeader">Tides for Buddy's Beach</h1>
+    
+    <div id = "container">
+      <h1 id = "myHeader">Tides for Buddy's Beach</h1>
+    </div>
     <article id = "tide"></article>
     <script>
     
@@ -27,33 +34,47 @@
         processTideData(data);
     })
 
+    function changeTimeZone(time)
+
     function processTideData(data){
       const article = document.querySelector('article');
       const tideValues = (data.values);
       console.log(data.values)
     
       for (let i = 0; i < tideValues.length; i++){
-        const tideEntery = document.createElement('p');
-        tideEntery.textContent = ((tideValues[i].time) + " | " + (tideValues[i].value));
-        console.log(tideEntery);
-        article.appendChild(tideEntery);
+        const tideEntry = document.createElement('p');
+        tideEntry.textContent = ((tideValues[i].time) + " | " + (tideValues[i].value));
+        console.log(tideEntry);
+        article.appendChild(tideEntry);
       }
     }
+
+
     </script>
 
     <style>
       body {
-        background-color:sandybrown;
+        background-color:rgb(221, 221, 221);
       }
 
       #myHeader {
         text-align: center;
+        font-family: 'Nanum Pen Script', cursive;
+        font-size: 5em;
       }
 
       #tide {
         text-align: center;
         font-weight: bold;
         line-height: 200%;
+      }
+
+      p {
+        font-family: 'Quicksand', sans-serif;
+      }
+
+      #container {
+        background-color: rgb(173, 208, 238);
       }
     </style>
   </body>
