@@ -103,5 +103,7 @@ dist
 # TernJS port file
 .tern-port
 
-# eleventy generated _site folder
+# eleventy/node generated folders
 _site/
+node_modules/
+package-lock.json
