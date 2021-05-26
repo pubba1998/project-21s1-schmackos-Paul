@@ -1,28 +1,16 @@
 ---
 layout: mylayout.njk
-title: Ahhh
+title: 
 ---
 
-# {{ title }}
-<script>
-
-let latitude = "-45.878761";
-let longitude = "170.502792";
-
-let url = "https://api.niwa.co.nz/tides/data?lat="+latitude+"&long="+longitude;
-fetch(url, {
-  method: "GET",
-  headers: {
-    "x-apikey": "mRg3UUIvxzuyZ0ESRPttGgs5FKSyXIph"
-  }
-})
-.then(response => { return response.json() })
-.then(data => {
-    console.log(data);
-    processTideData(data);
-})
-
-function processTideData(data){
-
-}
-</script>
+  <div id = "container">
+      <h1 id = "myHeader">Tides for Buddy's Beach</h1> 
+  </div>
+    
+  <article id = "tide"></article>
+    
+  <div id = "widget">
+      <iframe id="widget-iframe" width="300px" height="167px"
+      src="https://services.metservice.com/weather-widget/widget?params=white|small|portrait|days-3|classic&loc=dunedin&type=urban" 
+      allowtransparency="true" style="border:none"></iframe>
+  </div>
