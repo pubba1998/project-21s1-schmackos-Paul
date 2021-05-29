@@ -31,22 +31,28 @@ function changeTimeZone(time){      // Function changes API output to match that
 function processTideData(data){     // Extractes the tides data form the fetch quest.
   const article = document.querySelector('article');
   const tideValues = (data.values);
+  let dayCheck = "Error";
   console.log(data.values)
 
   for (let i = 0; i < tideValues.length; i++){        // for loop runs through all the data entries form the fetch and prints them out to article.
     const tideEntry = document.createElement('p');
     const tideEntry2 = document.createElement('h3');
-    // const dayCheck = 7;
     if(tideValues[i].value < 1){      // if statment only prints them out if the value is less that 1 (aka low tide).
       let day = new Date(changeTimeZone(tideValues[i].time));
       let dayName = weekdays[day.getDay()];
-      // dayCheck.textContent = dayName;
-      // console.log(dayCheck);
-      tideEntry2.textContent = (dayName);
+      console.log(dayCheck);
+
+      if (dayCheck != dayName) {      // if stament check if the data is a different day to the previous day. Prints the day if it is on a different day.
+        dayCheck = dayName;
+        tideEntry2.textContent = (dayCheck);
+        article.appendChild(tideEntry2);
+      };
+
       tideEntry.textContent = (changeTimeZone(tideValues[i].time) + " | " + (tideValues[i].value));
+      article.appendChild(tideEntry);
     }
     console.log(tideEntry);
-    article.appendChild(tideEntry2);
-    article.appendChild(tideEntry);
+    
+    
   }
 }
