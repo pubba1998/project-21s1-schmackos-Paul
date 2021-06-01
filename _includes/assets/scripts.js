@@ -25,8 +25,15 @@ fetch(url, {
 
 function changeTimeZone(time){      // Function changes API output to match that of the device it is on.
   let date = new Date(time);
-  // date.setHours( date.getHours() + 12 );
-  return date.toLocaleString();
+  return date;
+}
+
+function formatDate(day){     // Generates the format for the date and time.
+  let day2 = day.getDate();
+  let month = (day.getMonth() + 1);
+  let hours = day.getHours();
+  let minutes = day.getMinutes();
+  return (day2 + '/'+ month + '  | ' + hours + ':' + minutes);
 }
 
 function processTideData(data){     // Extractes the tides data form the fetch quest.
@@ -49,13 +56,13 @@ function processTideData(data){     // Extractes the tides data form the fetch q
 
           console.log(dayCheck);
 
-          if (dayCheck != dayName) {      // if stament check if the data is a different day to the previous day. Prints the day if it is on a different day.
+          if (dayCheck != dayName) {      // if statement check if the data is a different day to the previous day. Prints the day if it is on a different day.
             dayCheck = dayName;
             tideEntry2.textContent = (dayCheck);
             article.appendChild(tideEntry2);
           };
-
-          tideEntry.textContent = (changeTimeZone(tideValues[i].time) + " | " + (tideValues[i].value));
+          
+          tideEntry.textContent = (formatDate(day) + " | " + (tideValues[i].value));      // Fills tideEntry with data.
           article.appendChild(tideEntry);
           console.log(tideEntry);
         }
