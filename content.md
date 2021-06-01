@@ -1,12 +1,19 @@
 ---
 layout: mylayout.njk
-title: 
+title:
 ---
 
   <div id = "container">
       <h1 id = "myHeader">Buddy's Beach</h1> 
   </div>
-    
+
+<div id = "navbar">
+<ul>
+    <li><a href="">Link_1</a></li>
+    <li><a href="">Link_2</a></li>
+    <li><a href="">Link_3</a></li>
+  </ul>
+</div>
   <article id = "tide"></article>
     
   <div id = "widget">
