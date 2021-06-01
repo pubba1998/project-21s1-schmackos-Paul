@@ -25,7 +25,8 @@ fetch(url, {
 
 function changeTimeZone(time){      // Function changes API output to match that of the device it is on.
   let date = new Date(time);
-  return date.toLocaleString();
+  // date.setHours( date.getHours() + 12 );
+  return date;
 }
 
 function processTideData(data){     // Extractes the tides data form the fetch quest.
@@ -34,7 +35,7 @@ function processTideData(data){     // Extractes the tides data form the fetch q
   let dayCheck = "Error";
   console.log(data.values)
 
-  for (let i = 0; i < tideValues.length; i++){        // for loop runs through all the data entries form the fetch and prints them out to article.
+  for (let i = 0; i < (tideValues.length - 2); i++){        // for loop runs through all the data entries form the fetch and prints them out to article.
     const tideEntry = document.createElement('p');
     const tideEntry2 = document.createElement('h3');
 
