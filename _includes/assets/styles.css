@@ -24,3 +24,8 @@ p {
   display: flex;
   justify-content: center;
 }
+
+h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bolder;
+}
