@@ -26,7 +26,7 @@ fetch(url, {
 function changeTimeZone(time){      // Function changes API output to match that of the device it is on.
   let date = new Date(time);
   // date.setHours( date.getHours() + 12 );
-  return date;
+  return date.toLocaleString();
 }
 
 function processTideData(data){     // Extractes the tides data form the fetch quest.
