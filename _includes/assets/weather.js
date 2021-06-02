@@ -15,14 +15,18 @@ function processWeatherData(data) {
     const weatherValues = (data.daily);
     const weatherEntry = document.createElement('p')
     const weatherDescription = document.createElement('p');
+    const sunrise = document.createElement('p')
     const windEntry = document.createElement('p')
     weatherEntry.textContent ="Today's temperatures: "+noKelvin(weatherValues[0].temp.min)+" minimum, "+noKelvin(weatherValues[0].temp.max)+" maximum.";
     weatherDescription.textContent = weatherValues[0].weather[0].description
-    windEntry.textContent = "Current windspeed: "+weatherValues[0].wind_speed.toFixed(1)+", wind direction: "+windDirection(weatherValues[0].wind_deg)
+    windEntry.textContent = "Current windspeed: "+weatherValues[0].wind_speed.toFixed(1)+", wind direction: "+windDirection(weatherValues[0].wind_deg);
+    var myDate = new Date(weatherValues[0].sunrise * 1000)
+    myDate.setHours(myDate.getHours() +12)
+    console.log(myDate.toGMTString()+"<br>"+myDate.toLocaleString())
     article.appendChild(weatherEntry)
     article.appendChild(weatherDescription)
     article.appendChild(windEntry)
-    console.log(weatherValues);
+    console.log(weatherValues)
 }
 
 function noKelvin(data) {
