@@ -7,4 +7,5 @@ title: Weather
     <h1 id = "myHeader">Weather for Buddy's Beach</h1>
  </div>
 
- <article id = "weather"></article>
+
+ <article id = "tide"></article>
