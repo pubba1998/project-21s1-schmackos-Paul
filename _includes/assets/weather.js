@@ -15,18 +15,25 @@ function processWeatherData(data) {
     const weatherValues = (data.daily);
     const weatherEntry = document.createElement('p')
     const weatherDescription = document.createElement('p');
-    const sunrise = document.createElement('p')
+    const sunData = document.createElement('p')
     const windEntry = document.createElement('p')
     weatherEntry.textContent ="Today's temperatures: "+noKelvin(weatherValues[0].temp.min)+" minimum, "+noKelvin(weatherValues[0].temp.max)+" maximum.";
     weatherDescription.textContent = weatherValues[0].weather[0].description
     windEntry.textContent = "Current windspeed: "+weatherValues[0].wind_speed.toFixed(1)+", wind direction: "+windDirection(weatherValues[0].wind_deg);
-    var myDate = new Date(weatherValues[0].sunrise * 1000)
-    myDate.setHours(myDate.getHours() +12)
-    console.log(myDate.toGMTString()+"<br>"+myDate.toLocaleString())
+    sunData.textContent = ("Sunrise: "+dateStuff(+weatherValues[0].sunrise))
+
     article.appendChild(weatherEntry)
     article.appendChild(weatherDescription)
     article.appendChild(windEntry)
+    article.append(sunData)
     console.log(weatherValues)
+}
+
+function dateStuff(data) {
+    var myDate = new Date(data * 1000)
+    myDate.setHours(myDate.getHours())
+    return myDate.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'})
+    .replace(/(:\d{2}| [AP]M)$/, "")
 }
 
 function noKelvin(data) {
