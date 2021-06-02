@@ -22,7 +22,11 @@ title: Tides
     <script>{{ js | safe }}</script>
   </head>
   <body>
-
+    <div id = "navbar">
+      {% for link in navigationLinks %}
+          <a href = "{{ link.url }}">{{ link.text }}</a>
+          {% endfor %}
+      </div>
     {{ content | safe }}
 
   </body>
