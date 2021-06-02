@@ -1,12 +1,13 @@
 ---
 layout: mylayout.njk
-title: 
+title:
 ---
 
   <div id = "container">
       <h1 id = "myHeader">Buddy's Beach</h1> 
   </div>
-    
+
+
   <article id = "tide"></article>
     
   <div id = "widget">
