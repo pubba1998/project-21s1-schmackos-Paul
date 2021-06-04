@@ -23,11 +23,9 @@ title: Tides
   </head>
   <body>
       <div id = "navbar">
-        <nav>
           {% for link in navigationLinks %}
           <a href = "{{ link.url }}">{{ link.text }}</a>
           {% endfor %}
-        </nav>
       </div>
 
     {{ content | safe }}
