@@ -40,6 +40,8 @@ h3 {
 /* Navbar */
 #navbar {
   width: 100%;
+  display: flex;
+  justify-content: center;
   position: sticky;
   top: 0;
   background-color: rgb(173, 208, 238);
