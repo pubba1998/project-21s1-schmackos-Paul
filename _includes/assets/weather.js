@@ -20,7 +20,7 @@ function processWeatherData(data) {
     weatherEntry.textContent ="Today's temperatures: "+noKelvin(weatherValues[0].temp.min)+" minimum, "+noKelvin(weatherValues[0].temp.max)+" maximum.";
     weatherDescription.textContent = weatherValues[0].weather[0].description
     windEntry.textContent = "Current windspeed: "+weatherValues[0].wind_speed.toFixed(1)+", wind direction: "+windDirection(weatherValues[0].wind_deg);
-    sunData.textContent = ("Sunrise: "+dateStuff(+weatherValues[0].sunrise))
+    sunData.textContent = ("Sunrise: "+dateStuff(weatherValues[0].sunrise) + " Sunset: "+dateStuff(weatherValues[0].sunset))
 
     article.appendChild(weatherEntry)
     article.appendChild(weatherDescription)
@@ -29,11 +29,21 @@ function processWeatherData(data) {
     console.log(weatherValues)
 }
 
+function formatDate(day){     // Generates the format for the date and time.
+    let day2 = day.getDate();
+    let month = (day.getMonth() + 1);
+    let hours = day.getHours();
+    let minutes = day.getMinutes();
+    return (day2 + '/'+ month + '  | ' + hours + ':' + minutes);
+  }
+
 function dateStuff(data) {
     var myDate = new Date(data * 1000)
     myDate.setHours(myDate.getHours())
-    return myDate.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'})
-    .replace(/(:\d{2}| [AP]M)$/, "")
+    myDate = formatDate(myDate)
+    /*return myDate.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'})
+    .replace(/(:\d{2}| [AP]M)$/, "")*/
+    return myDate
 }
 
 function noKelvin(data) {
