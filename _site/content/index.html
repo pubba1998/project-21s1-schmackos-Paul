@@ -11,7 +11,12 @@
     <title>Buddy's Beach</title>
     
     <style>
-    
+    html{
+  position: relative;
+  min-height: 100%;
+}
+
+
 body {
   background-color:rgb(221, 221, 221);
   margin-bottom: 100px;
@@ -37,6 +42,7 @@ p {
   display: flex;
   justify-content: center;
   padding-bottom: 2em;
+  margin: 0 0 100px;
 }
 
 h3 {
@@ -51,10 +57,11 @@ h3 {
   width: 100%;
   font-family: 'Quicksand', sans-serif;
   font-size: 1em;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   font-weight: bold;
   height: 100px;
+  overflow: hidden;
 }
 
 .footer ul{
