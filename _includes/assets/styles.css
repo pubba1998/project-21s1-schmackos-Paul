@@ -1,7 +1,7 @@
 
 body {
   background-color:rgb(221, 221, 221);
-  margin: 0;
+  margin-bottom: 100px;
 }
 #myHeader {
   text-align: center;
@@ -23,6 +23,7 @@ p {
   position: relative;
   display: flex;
   justify-content: center;
+  padding-bottom: 2em;
 }
 
 h3 {
@@ -37,11 +38,10 @@ h3 {
   width: 100%;
   font-family: 'Quicksand', sans-serif;
   font-size: 1em;
-  position: relative;
-  bottom: 0%;
+  position: fixed;
+  bottom: 0;
   font-weight: bold;
-  height: 125px;
-  margin-top: 10px;
+  height: 100px;
 }
 
 .footer ul{
