@@ -31,9 +31,13 @@ function changeTimeZone(time){      // Function changes API output to match that
 function formatDate(day){     // Generates the format for the date and time.
   let day2 = day.getDate();
   let month = (day.getMonth() + 1);
+  return (day2 + '/'+ month + '  |  ');
+}
+
+function formatTime(day){     // Formats the time so that it is easier to read.
   let hours = day.getHours();
   let minutes = day.getMinutes();
-  return (day2 + '/'+ month + '  | ' + hours + ':' + minutes);
+  return (hours + ':' + minutes);
 }
 
 function processTideData(data){     // Extractes the tides data form the fetch quest.
@@ -61,8 +65,14 @@ function processTideData(data){     // Extractes the tides data form the fetch q
             tideEntry2.textContent = (dayCheck);
             article.appendChild(tideEntry2);
           };
-          
-          tideEntry.textContent = (formatDate(day) + " | " + (tideValues[i].value));      // Fills tideEntry with data.
+
+          const boldText = document.createElement('b');
+          const textNode2 = document.createTextNode("  |  " + tideValues[i].value);
+          boldText.textContent = formatTime(day);     // Makes the information form formatTime bold.
+          tideEntry.textContent = (formatDate(day));      // Fills tideEntry with data from the formatDate funtion.
+          tideEntry.appendChild(boldText);
+          tideEntry.appendChild(textNode2)
+
           article.appendChild(tideEntry);
           console.log(tideEntry);
         }
