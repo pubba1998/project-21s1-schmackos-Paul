@@ -80,18 +80,27 @@ h3 {
   position: absolute;
   bottom: 0;
   font-weight: bold;
-  height: 100px;
+  height: 110px;
   overflow: hidden;
+}
+
+.footer a:link {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .footer ul{
   list-style-type: none;
   padding: 0 15px 0 15px;
+  font-size: small;
 }
 
 .footer h3{
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin: 0;
   padding: 0 15px 0 15px;
 }
@@ -206,7 +215,7 @@ function processTideData(data){     // Extractes the tides data form the fetch q
         <ul>
             <li><a href="https://developer.niwa.co.nz/">developer.niwa.co.nz</a></li>
             <li><a href="www.metservice.com">www.metservice.com</a></li>
-            
+            <li><a href="https://api.openweathermap.org">api.openweathermap.org</a></li>
         </ul>
     </div>
     <div id = "right">
