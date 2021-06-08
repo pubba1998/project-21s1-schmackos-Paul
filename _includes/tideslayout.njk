@@ -17,17 +17,16 @@ title: Tides
     {% endset %}
     <style>{{ css | safe }}</style>
     {% set js %}
-    {% include "assets/scripts.js" %}
+    {% include "assets/tidesScripts.js" %}
     {% endset %}
-    
     <script>{{ js | safe }}</script>
   </head>
   <body>
-      <div id = "navbar">
-        {% for link in navigationLinks %}
+    <div id = "navbar">
+      {% for link in navigationLinks %}
           <a href = "{{ link.url }}">{{ link.text }}</a>
           {% endfor %}
-        </div>
+      </div>
     {{ content | safe }}
     {% include "components/footer.njk" %}
   </body>

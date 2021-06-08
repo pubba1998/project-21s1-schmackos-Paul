@@ -42,7 +42,7 @@ function processTideData(data){     // Extractes the tides data form the fetch q
   let dayCheck = "Error";
   console.log(data.values)
 
-  for (let i = 0; i < (tideValues.length - 2); i++){        // for loop runs through all the data entries form the fetch and prints them out to article.
+  for (let i = 0; i < tideValues.length; i++){        // for loop runs through all the data entries form the fetch and prints them out to article.
     const tideEntry = document.createElement('p');
     const tideEntry2 = document.createElement('h3');
 
@@ -50,22 +50,23 @@ function processTideData(data){     // Extractes the tides data form the fetch q
       let dayName = weekdays[day.getDay()];
       let current = new Date();
 
-      if(tideValues[i].value < 1){      // if statment only prints them out if the value is less that 1 (aka low tide).
+    if(tideValues[i].value < 1){      // if statment only prints them out if the value is less that 1 (aka low tide).
+      let day = new Date(changeTimeZone(tideValues[i].time));
+      let dayName = weekdays[day.getDay()];
+      console.log(dayCheck);
 
-        if((day.getDay() == current.getDay()) || (day.getDay() == 6) || (day.getDay() == 0)){     // only prints today and weekends
+      if (dayCheck != dayName) {      // if stament check if the data is a different day to the previous day. Prints the day if it is on a different day.
+        dayCheck = dayName;
+        tideEntry2.textContent = (dayCheck);
+        article.appendChild(tideEntry2);
+      };
 
-          console.log(dayCheck);
-
-          if (dayCheck != dayName) {      // if statement check if the data is a different day to the previous day. Prints the day if it is on a different day.
-            dayCheck = dayName;
-            tideEntry2.textContent = (dayCheck);
-            article.appendChild(tideEntry2);
-          };
-          
-          tideEntry.textContent = (formatDate(day) + " | " + (tideValues[i].value));      // Fills tideEntry with data.
+      tideEntry.textContent = (formatDate(day) + " | " + (tideValues[i].value));      // Fills tideEntry with data.
           article.appendChild(tideEntry);
           console.log(tideEntry);
-        }
-      };
+    }
+    console.log(tideEntry);
+    
+    
   }
 }
