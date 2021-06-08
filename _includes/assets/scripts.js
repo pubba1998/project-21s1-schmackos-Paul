@@ -37,7 +37,15 @@ function formatDate(day){     // Generates the format for the date and time.
 function formatTime(day){     // Formats the time so that it is easier to read.
   let hours = day.getHours();
   let minutes = day.getMinutes();
+  hours = checkNumber(hours);
   return (hours + ':' + minutes);
+}
+
+function checkNumber(number){
+  if(number < 10){
+    number = ("0" + number);
+  }
+  return(number);
 }
 
 function processTideData(data){     // Extractes the tides data form the fetch quest.
