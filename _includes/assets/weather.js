@@ -34,7 +34,7 @@ function formatDate(day){     // Generates the format for the date and time.
     let month = (day.getMonth() + 1);
     let hours = day.getHours();
     let minutes = day.getMinutes();
-    return (day2 + '/'+ month + '  | ' + hours + ':' + minutes);
+    return (hours + ':' + minutes);
   }
 
 function dateStuff(data) {
