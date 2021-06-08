@@ -50,6 +50,26 @@ h3 {
   font-weight: bolder;
 }
 
+/* Navbar */
+#navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: rgb(173, 208, 238);
+  text-align: center;
+  
+}
+
+#navbar a{
+  display: inline;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bolder;
+  font-size: 1.5em;
+  padding: 35px;
+  color: black;
+  text-decoration: none;
+}
+
 /* Footer */
 .footer{
 
@@ -161,7 +181,15 @@ function processTideData(data){     // Extractes the tides data form the fetch q
     </script>
   </head>
   <body>
-
+      <div id = "navbar">
+        
+          <a href = "/content/index.html">Home</a>
+          
+          <a href = "/tides/index.html">Tides</a>
+          
+          <a href = "/weather/index.html">Weather</a>
+          
+        </div>
       <div id = "container">
       <h1 id = "myHeader">Buddy's Beach</h1> 
   </div>

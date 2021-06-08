@@ -11,10 +11,15 @@
     <title>Buddy's Beach</title>
     
     <style>
-    
+    html{
+  position: relative;
+  min-height: 100%;
+}
+
+
 body {
   background-color:rgb(221, 221, 221);
-  margin: 0;
+  margin-bottom: 100px;
 }
 #myHeader {
   text-align: center;
@@ -36,6 +41,8 @@ p {
   position: relative;
   display: flex;
   justify-content: center;
+  padding-bottom: 2em;
+  margin: 0 0 100px;
 }
 
 h3 {
@@ -63,8 +70,41 @@ h3 {
   text-decoration: none;
 }
 
+/* Footer */
+.footer{
 
+  background-color: rgb(173, 208, 238);
+  width: 100%;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1em;
+  position: absolute;
+  bottom: 0;
+  font-weight: bold;
+  height: 100px;
+  overflow: hidden;
+}
+
+.footer ul{
+  list-style-type: none;
+  padding: 0 15px 0 15px;
+}
+
+.footer h3{
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0 15px 0 15px;
+}
+
+.footer #left {
+    float: left;
+}
+
+.footer #right {
+  float: right;
+}
     </style>
+    
     
     <script>
     let latitude = "-45.878761";
@@ -142,15 +182,14 @@ function processTideData(data){     // Extractes the tides data form the fetch q
   </head>
   <body>
       <div id = "navbar">
-          
+        
           <a href = "/content/index.html">Home</a>
           
           <a href = "/tides/index.html">Tides</a>
           
           <a href = "/weather/index.html">Weather</a>
           
-      </div>
-
+        </div>
       <div id = "container">
       <h1 id = "myHeader">Buddy's Beach</h1> 
   </div>
@@ -161,5 +200,19 @@ function processTideData(data){     // Extractes the tides data form the fetch q
       allowtransparency="true" style="border:none"></iframe>
   </div>
 
+    <div class = "footer">
+    <div id = "left">
+        <h3>References</h3>
+        <ul>
+            <li><a href="https://developer.niwa.co.nz/">developer.niwa.co.nz</a></li>
+            <li><a href="www.metservice.com">www.metservice.com</a></li>
+            
+        </ul>
+    </div>
+    <div id = "right">
+        <h3>Contact Us</h3>
+        <ul><li><a href = "mailto: schmackos.bit@gmail.com">schmackos.bit@gmail.com</a></li></ul>
+    </div>
+</div>
   </body>
 </html>
