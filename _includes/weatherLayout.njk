@@ -1,0 +1,34 @@
+---
+title: Weather
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <title>Buddy's Beach</title>
+    {% set css %}
+    {% include "assets/styles.css" %}
+    {% endset %}
+    <style>{{ css | safe }}</style>
+    {% set js %}
+    {% include "assets/weather.js" %}
+    {% endset %}
+    <script>{{ js | safe }}</script>
+  </head>
+  <body>
+ <div id = "navbar">
+        {% for link in navigationLinks %}
+          <a href = "{{ link.url }}">{{ link.text }}</a>
+          {% endfor %}
+        </div>
+    {{ content | safe }}
+     {% include "components/footer.njk" %}
+
+  </body>
+</html>
