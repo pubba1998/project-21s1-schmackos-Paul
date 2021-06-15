@@ -14,9 +14,17 @@ function processWeatherData(data) {
     const article = document.querySelector('article')
     const weatherValues = (data.daily);
     const weatherEntry = document.createElement('p')
+    weatherEntry.classList.add("zoom-in");
+    weatherEntry.classList.add("rounded-border");
     const weatherDescription = document.createElement('p');
+    weatherDescription.classList.add("zoom-in");
+    weatherDescription.classList.add("rounded-border");
     const sunData = document.createElement('p')
+    sunData.classList.add("zoom-in");
+    sunData.classList.add("rounded-border");
     const windEntry = document.createElement('p')
+    windEntry.classList.add("zoom-in");
+    windEntry.classList.add("rounded-border");
     weatherEntry.textContent ="Today's temperatures: "+noKelvin(weatherValues[0].temp.min)+" minimum, "+noKelvin(weatherValues[0].temp.max)+" maximum.";
     weatherDescription.textContent = weatherValues[0].weather[0].description
     windEntry.textContent = "Current windspeed: "+weatherValues[0].wind_speed.toFixed(1)+", wind direction: "+windDirection(weatherValues[0].wind_deg);

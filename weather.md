@@ -8,4 +8,4 @@ title: Weather
  </div>
 
 
- <article id = "tide"></article>
+ <article id = "tide" class = "weather-display"></article>
