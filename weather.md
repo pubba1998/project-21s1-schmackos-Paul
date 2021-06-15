@@ -10,4 +10,4 @@ title: Weather
  -->
 
 
- <article id = "tide"></article>
+ <article id = "tide" class = "weather-display"></article>
